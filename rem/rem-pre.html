@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            position: relative;
+        }
+        h1 {
+            font-size: 0.6rem;
+        }
+        h2 {
+            font-size: 0.48rem;
+        }
+        h3 {
+            font-size: 0.36rem;
+        }
+        h4 {
+            font-size: 0.24rem;
+        }
+        p {
+            font-size: 0.32rem;
+        }
+        span {
+            position: abslute;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            top: 0;
+            left: 100;
+            background: #ff0;
+            font-size: 0.24rem;
+        }
+    </style>
+    <script>
+        function adapt(){
+            var designWidth = 640, rem2px = 100;
+            var h = document.getElementsByTagName('html')[0];
+            var htmlFontSize = parseFloat(window.getComputedStyle(h, null).getPropertyValue('font-size'));
+
+            document.documentElement.style.fontSize =
+                    window.innerWidth / designWidth * rem2px / htmlFontSize * 100 + '%';
+        };
+        var defaultFontSize = adapt();
+    </script>
+</head>
+<body>
+<h1>title h1</h1>
+<h2>title h2</h2>
+<h3>title h3</h3>
+<h4>title h4</h4>
+<p>段落标签1</p>
+<p>段落标签2</p>
+<span>添加</span>
+
+</body>
+</html>
